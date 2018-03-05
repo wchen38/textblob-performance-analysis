@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# requires ghostscript (http://www.ghostscript.com/)
-# requires ImageMagick
-# requires tesseract (https://code.google.com/p/tesseract-ocr/)
-# requires GNU parallel (https://www.gnu.org/software/parallel/)
-# all of these are typically available through yum/apt/brew/etc.
 
 # number of cores over which the process will be parallelized
 num_thread=$1
@@ -21,7 +16,7 @@ OPATH=./
 if [ $num_thread = '1' ]
 then
      echo using thread 1
-     bash toplev_plot.sh
+     #bash toplev_plot.sh
      ocperf.py stat parallel ::: "python text_blob.py $t1_f1 $num_loop"
 elif [ $num_thread = '2' ]
 then

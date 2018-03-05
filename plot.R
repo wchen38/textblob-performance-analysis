@@ -6,7 +6,7 @@ pdf(file="./data/graphs/rplot.pdf")
 data <- read.csv(file="./data/csvs/t1_new.csv")
 #print("L1MPK: ", data[1])
 #plot it
-plot(data$L1MPKI ~ data$Timestamp, type="p", col="red", main="Benchmarks", xlab="timestamp", ylab="measurment")
+plot(data$L1MPKI ~ data$Timestamp, type="l", col="red", main="Benchmarks", xlab="timestamp", ylab="measurment")
 #plot(data$Frontend_Bound ~ data$Timestamp, type="o", col="red", main="Benchmarks", xlab="timestamp", ylab="measurment")
 #par(new=TRUE)
 #plot(data$Bad_Speculation ~ data$Timestamp, type="l", col="green", main="Benchmarks", xlab="timestamp", ylab="measurment")
