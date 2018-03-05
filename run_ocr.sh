@@ -21,6 +21,7 @@ OPATH=./
 if [ $num_thread = '1' ]
 then
      echo using thread 1
+     bash toplev_plot.sh
      ocperf.py stat parallel ::: "python text_blob.py $t1_f1 $num_loop"
 elif [ $num_thread = '2' ]
 then
