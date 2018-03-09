@@ -23,27 +23,26 @@ output_t8_csv=../data/csvs/t8/t8_new.csv
 # extra arguments to tesseract
 #parallel --bar -j $num_cores ./text_blob.py
      echo ------------------------using thread 1
-     perf stat -I 300 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t1_csv python text_blob.py $t1_f1 8
-     #perf stat -e L1-dcache-load-misses,instructions -x, -o $input_csv python text_blob.py $t1_f1 $num_loop
+     perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t1_csv python text_blob.py $t1_f1 8
      interval-normalize.py $input_t1_csv > $output_t1_csv
      Rscript plot.R
 
 if [ 0 = 1 ]
 then
      echo -------------------------using thread 2
-     perf stat -I 150 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t2_csv parallel ::: "python text_blob.py $t1_f1 4" "python text_blob.py $t1_f1 4"
+     perf stat -I 1000 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t2_csv parallel ::: "python text_blob.py $t1_f1 4" "python text_blob.py $t1_f1 4"
      interval-normalize.py $input_t2_csv > $output_t2_csv
      Rscript plot2.R    
 
      echo -------------------------using thread 4
-     perf stat -I 100 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t4_csv parallel ::: "python text_blob.py $t1_f1 2" \
+     perf stat -I 500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t4_csv parallel ::: "python text_blob.py $t1_f1 2" \
      "python text_blob.py $t1_f1 2" "python text_blob.py $t1_f1 2"  "python text_blob.py $t1_f1 2"
      interval-normalize.py $input_t4_csv > $output_t4_csv
      Rscript plot4.R
     
 
      echo ------------------------ using thread 8
-     perf stat -I 50 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t8_csv parallel ::: "python text_blob.py $t1_f1 1" \
+     perf stat -I 100 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles -x, -o $input_t8_csv parallel ::: "python text_blob.py $t1_f1 1" \
      "python text_blob.py $t1_f1 1" "python text_blob.py $t1_f1 1"  "python text_blob.py $t1_f1 1" "python text_blob.py $t1_f1 1" \
      "python text_blob.py $t1_f1 1" "python text_blob.py $t1_f1 1"  "python text_blob.py $t1_f1 1"
      interval-normalize.py $input_t8_csv > $output_t8_csv
