@@ -1,6 +1,8 @@
 #! bin/bash
 thread=$1
 
+plot=textblob-performance-analysis/docker/src/plot.R
+
 t1_1T=textblob-performance-analysis/inputs/t1/small1
 t1_1T4=textblob-performance-analysis/inputs/t1/small1
 t1_1T16=textblob-performance-analysis/inputs/t1/small1
@@ -17,7 +19,7 @@ then
 	perf stat -I 100 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T" test1
 	interval-normalize.py $input_t1_csv > $output_t1_csv
-	Rscript plot.R
+	Rscript $plot
 	
 	perf stat -I 100 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T4" test1
