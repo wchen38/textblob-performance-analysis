@@ -23,7 +23,7 @@ output_t8_csv=../../data/csvs/t8/t8_new.csv
 # extra arguments to tesseract
 #parallel --bar -j $num_cores ./text_blob.py
 echo $thread
-echo pwd
+pwd
 if [ $thread = '1' ]
 then
      echo ------------------------using thread 1
