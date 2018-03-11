@@ -16,10 +16,12 @@ RUN pip install numpy \
 	nltk \
 	--upgrade nltk
 RUN python -m textblob.download_corpora
+
+ARG CACHE_DATE=2018-3-11
 RUN cd ~
 RUN git clone https://github.com/wchen38/textblob-performance-analysis.git
 RUN cd textblob-performance-analysis
-RUN ls
+#RUN ls
 
 COPY helloworld.sh /helloworld.sh 
 #CMD ["bash","start_docker.sh"]

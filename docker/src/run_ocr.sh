@@ -4,9 +4,9 @@
 # number of cores over which the process will be parallelized
 #$num_thread=$1
 #num_loop=$2
-t1_f1=../../inputs/t1/1T256
-t2_f1=../../inputs/t2/1
-t2_f2=../../inputs/t2/2
+t1_f1=./textblob-performance-analysis/inputs/t1/1T256
+t2_f1=./textblob-performance-analysis/inputs/t2/1
+t2_f2=./textblob-performance-analysis/inputs/t2/2
 
 input_t1_csv=../../data/csvs/t1.csv
 input_t2_csv=../../data/csvs/t2/t2.csv
@@ -24,6 +24,7 @@ output_t8_csv=../../data/csvs/t8/t8_new.csv
 #parallel --bar -j $num_cores ./text_blob.py
 echo $thread
 pwd
+ls
 if [ $thread = '1' ]
 then
      echo ------------------------using thread 1
