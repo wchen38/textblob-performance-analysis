@@ -17,6 +17,6 @@ for x in range (0, int(loop_count)):
 		text = fp.read()
 	wiki = TextBlob(text)
 	#wiki.translate(to='es')
-	print(wiki.tags)
+	#print(wiki.tags)
         wiki.tags
 	fp.close()
