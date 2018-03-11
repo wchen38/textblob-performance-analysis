@@ -1,10 +1,10 @@
 # My first program in R Programming
 myString <- "Hello, World! This is my plot!"
 print ( myString)
-pdf(file="/textblob-performance-analysis/data/graphs/t1/t1_test1T.pdf")
+pdf(file="t1_test1T.pdf")
 #pdf(file="../../data/graphs/t1/t1_test1T.pdf")
 #read in csv file
-data <- read.csv(file="textblob-performance-analysis/data/csvs/t1_new.csv", header=TRUE)
+data <- read.csv(file="/textblob-performance-analysis/data/csvs/t1_new.csv", header=TRUE)
 #class(data)
 head(data)
 #print("L1MPK: ", data[1])
