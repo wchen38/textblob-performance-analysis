@@ -4,11 +4,11 @@ from textblob import TextBlob
 #import numpy as np
 #from threading import Thread
 
-
+print python hellow world
+print sys.argv[1]
 file1 = sys.argv[1]
 loop_count = sys.argv[2]
-print "file1="
-print file1
+
 #with open(str(file1), 'r') as fp:
  #       text = fp.read() 
 
