@@ -1,14 +1,12 @@
-var = 123
 # My first program in R Programming
 myString <- "Hello, World! This is my plot!"
+
+#read from arugument 1
 args <- commandArgs(trailingOnly = TRUE)
 filename <- args[1]
 print (filename)
 print ( myString)
-#pdf(file="../data/graphs/t1/t1_test1T.pdf")
 pdf(file=filename)
-#pdf( file=../data/graphs/t1/sprintf("%s.csv",var))
-#pdf(file="../../data/graphs/t1/t1_test1T.pdf")
 #read in csv file
 data <- read.csv(file="../data/csvs/t1_new.csv", header=TRUE)
 #class(data)

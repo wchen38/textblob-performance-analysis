@@ -1,7 +1,12 @@
 # My first program in R Programming
 myString <- "Hello, World! This is my plot!"
 print ( myString)
-pdf(file="../data/graphs/t4/t4_1T256.pdf")
+args <- commandArgs(trailingOnly = TRUE)
+filename <- args[1]
+print (filename)
+pdf(file=filename)
+
+#pdf(file="../data/graphs/t4/t4_1T256.pdf")
 #read in csv file
 data <- read.csv(file="../data/csvs/t4/t4_new.csv", header=TRUE)
 #class(data)
