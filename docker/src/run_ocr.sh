@@ -6,7 +6,7 @@
 #num_loop=$2
 #t1_f1=../../inputs/t1/small1
 src=textblob-performance-analysis/docker/src/text_blob.py
-t1_f1=~/textblob-performance-analysis/inputs/t1/small1
+t1_f1=textblob-performance-analysis/inputs/t1/small1
 t2_f1=./textblob-performance-analysis/inputs/t2/1
 t2_f2=./textblob-performance-analysis/inputs/t2/2
 
