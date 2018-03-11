@@ -1,10 +1,12 @@
 var = 123
 # My first program in R Programming
 myString <- "Hello, World! This is my plot!"
+filename <- args[1]
+print (filename)
 print ( myString)
-#pdf(file="../data/graphs/t1/t1_test1T.pdf")
+pdf(file="../data/graphs/t1/t1_test1T.pdf")
 #filename = sprintf("%s.csv",var)
-pdf( file=../data/graphs/t1/sprintf("%s.csv",var))
+#pdf( file=../data/graphs/t1/sprintf("%s.csv",var))
 #pdf(file="../../data/graphs/t1/t1_test1T.pdf")
 #read in csv file
 data <- read.csv(file="../data/csvs/t1_new.csv", header=TRUE)
