@@ -28,6 +28,7 @@ echo hello world!
 echo $t1_f1
 echo $thread
 ls ~/
+ls /
 #pwd
 #ls textblob-performance-analysis/docker/src/$t1_f1
 if [[ $thread = "1" ]]
