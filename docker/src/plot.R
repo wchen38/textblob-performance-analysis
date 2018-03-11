@@ -1,9 +1,9 @@
-var=123
+var <- "123"
 # My first program in R Programming
 myString <- "Hello, World! This is my plot!"
 print ( myString)
 #pdf(file="../data/graphs/t1/t1_test1T.pdf")
-filename=sprintf("%s.csv",$Var)
+filename=sprintf("%s.csv",var)
 pdf( file=../data/graphs/t1/$filename)
 #pdf(file="../../data/graphs/t1/t1_test1T.pdf")
 #read in csv file
