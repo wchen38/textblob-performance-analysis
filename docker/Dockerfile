@@ -1,3 +1,4 @@
+#use this to clear cache $docker build --no-cache -t test1 .
 from ubuntu
 
 COPY docker_setup.sh /docker_setup.sh

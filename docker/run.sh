@@ -1,1 +1,3 @@
-perf stat docker run ...
+#! bin/bash
+thread=$1
+
