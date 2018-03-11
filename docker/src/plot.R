@@ -3,8 +3,8 @@ var = 123
 myString <- "Hello, World! This is my plot!"
 print ( myString)
 #pdf(file="../data/graphs/t1/t1_test1T.pdf")
-filename = sprintf("%s.csv",var)
-pdf( file=../data/graphs/t1/filename)
+#filename = sprintf("%s.csv",var)
+pdf( file=../data/graphs/t1/sprintf("%s.csv",var))
 #pdf(file="../../data/graphs/t1/t1_test1T.pdf")
 #read in csv file
 data <- read.csv(file="../data/csvs/t1_new.csv", header=TRUE)
