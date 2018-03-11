@@ -7,7 +7,8 @@ from textblob import TextBlob
 
 file1 = sys.argv[1]
 loop_count = sys.argv[2]
-
+print "file1="
+print file1
 #with open(str(file1), 'r') as fp:
  #       text = fp.read() 
 
