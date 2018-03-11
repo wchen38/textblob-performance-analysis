@@ -6,37 +6,33 @@
 #num_loop=$2
 #t1_f1=../../inputs/t1/small1
 src=textblob-performance-analysis/docker/src/text_blob.py
-t1_f1=textblob-performance-analysis/inputs/t1/small1
-t2_f1=./textblob-performance-analysis/inputs/t2/1
-t2_f2=./textblob-performance-analysis/inputs/t2/2
+#t1_f1=textblob-performance-analysis/inputs/t1/small1
 
-input_t1_csv=../../data/csvs/t1.csv
-input_t2_csv=../../data/csvs/t2/t2.csv
-input_t4_csv=../../data/csvs/t4/t4.csv
-input_t8_csv=../../data/csvs/t8/t8.csv
+#input_t1_csv=../../data/csvs/t1.csv
+#input_t2_csv=../../data/csvs/t2/t2.csv
+#input_t4_csv=../../data/csvs/t4/t4.csv
+#input_t8_csv=../../data/csvs/t8/t8.csv
 
-output_t1_csv=../../data/csvs/t1_new.csv
-output_t2_csv=../../data/csvs/t2/t2_new.csv
-output_t4_csv=../../data/csvs/t4/t4_new.csv
-output_t8_csv=../../data/csvs/t8/t8_new.csv
+#output_t1_csv=../../data/csvs/t1_new.csv
+#output_t2_csv=../../data/csvs/t2/t2_new.csv
+#output_t4_csv=../../data/csvs/t4/t4_new.csv
+#output_t8_csv=../../data/csvs/t8/t8_new.csv
 
 
 # runs OCR on the found TIFF files and converts them to text. Assumes English, but you can supply
 # extra arguments to tesseract
 #parallel --bar -j $num_cores ./text_blob.py
 echo hello world!
-echo $t1_f1
-echo $thread
-ls ~/
-ls /
+#echo $t1_f1
+#echo $thread
+#ls ~/
+#ls /
 #pwd
 #ls textblob-performance-analysis/docker/src/$t1_f1
 if [[ $thread = "1" ]]
 then
      echo ------------------------using thread 1
-     python $src $t1_f1 8
-     #interval-normalize.py $input_t1_csv > $output_t1_csv
-     #Rscript plot.R
+     python $src $t1_1T 8
 fi
 
 if [ 0 = 1 ]
