@@ -3,5 +3,23 @@ from ubuntu
 COPY docker_setup.sh /docker_setup.sh
 COPY start_docker.sh /start_docker.sh
 
+RUN apt-get -y update
+RUN apt-get install -qq -y curl
+RUN apt-get install -y git \
+	python \
+	python-pip
+
+RUN pip install numpy \
+	--upgrade pip \
+	-U textblob \
+	nltk \
+	--upgrade nltk
+RUN python -m textblob.download_corpora
+RUN cd ~
+RUN git clone https://github.com/wchen38/textblob-performance-analysis.git
+RUN cd textblob-performance-analysis
+RUN ls
+
+COPY helloworld.sh /helloworld.sh 
 #CMD ["bash","start_docker.sh"]
-CMD ["bash","docker_setup.sh"]
+CMD ["python","./textblob-performance-analysis/src/text_blob.py", "textblob-performance-analysis/inputs/t1/small1","2"]
