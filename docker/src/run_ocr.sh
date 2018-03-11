@@ -2,8 +2,9 @@
 
 
 # number of cores over which the process will be parallelized
-#$num_thread=$1
+thread=$1
 #num_loop=$2
+#t1_f1=../../inputs/t1/small1
 t1_f1=../../inputs/t1/small1
 t2_f1=./textblob-performance-analysis/inputs/t2/1
 t2_f2=./textblob-performance-analysis/inputs/t2/2
@@ -23,8 +24,8 @@ output_t8_csv=../../data/csvs/t8/t8_new.csv
 # extra arguments to tesseract
 #parallel --bar -j $num_cores ./text_blob.py
 echo $t1_f1
-pwd
-ls textblob-performance-analysis/docker/src/$t1_f1
+#pwd
+#ls textblob-performance-analysis/docker/src/$t1_f1
 if [ $thread = '1' ]
 then
      echo ------------------------using thread 1
