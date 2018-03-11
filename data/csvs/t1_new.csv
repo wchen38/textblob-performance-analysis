@@ -1,5 +1,5 @@
 Timestamp,L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses
-     1.000105708,526096,49085499,906524,184619,39376371,23308
-     2.000309636,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>
-     3.000464251,4122,69252,12788,1497,302721,761
-     3.179349492,83912,3422090,144022,10759,3918991,10707
+     1.000139083,505899,50118377,848019,181987,38797288,24329
+     2.000326426,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>
+     3.000491132,3945,62454,11249,1172,275222,714
+     3.052829923,79550,3381723,129303,10552,3650141,7827
