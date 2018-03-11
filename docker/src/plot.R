@@ -3,7 +3,7 @@ var=123
 myString <- "Hello, World! This is my plot!"
 print ( myString)
 #pdf(file="../data/graphs/t1/t1_test1T.pdf")
-filename=sprintf(“%s.csv”,Var)
+filename=sprintf("%s.csv",Var)
 pdf( file=../data/graphs/t1/$filename)
 #pdf(file="../../data/graphs/t1/t1_test1T.pdf")
 #read in csv file
