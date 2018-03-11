@@ -1,9 +1,9 @@
 # My first program in R Programming
 myString <- "Hello, World! This is my plot!"
 print ( myString)
-pdf(file="../../data/graphs/t4/t4_1T256.pdf")
+pdf(file="../data/graphs/t4/t4_1T256.pdf")
 #read in csv file
-data <- read.csv(file="../../data/csvs/t4/t4_new.csv", header=TRUE)
+data <- read.csv(file="../data/csvs/t4/t4_new.csv", header=TRUE)
 #class(data)
 #head(data)
 #print("L1MPK: ", data[1])
