@@ -1,6 +1,6 @@
 #! /bin/sh
 hello=$1
-echo $hello
+echo $THREAD
 echo "-------------------------------------"
 apt-get -qq update
 apt-get -qq -y install curl
