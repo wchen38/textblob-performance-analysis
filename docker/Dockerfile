@@ -16,8 +16,8 @@ RUN pip install numpy \
 	nltk \
 	--upgrade nltk
 RUN python -m textblob.download_corpora
-
-ARG CACHE_DATE=2018-3-11
+#change this date if you want ot clear cache
+ARG CACHE_DATE=2018-3-09
 RUN cd ~
 RUN git clone https://github.com/wchen38/textblob-performance-analysis.git
 RUN cd textblob-performance-analysis
