@@ -30,6 +30,11 @@ then
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T64" test1
 	interval-normalize.py $input_t1_csv > $output_t1_csv
         Rscript $plot
+	
+	perf stat -I 1000 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
+        -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T256" test1
+        interval-normalize.py $input_t1_csv > $output_t1_csv
+        Rscript $plot
 
 
         Rscript $plot
