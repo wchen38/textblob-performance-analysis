@@ -27,6 +27,7 @@ elif [[ $thread = "4" ]]
 then 
 	echo thread 4 in the run.sh file--------------------------------------------
 elif [[  $thread = "8" ]]
+then
 	echo thread 8 in the run.sh file--------------------------------------------
 else 
 	echo invalid thread number
