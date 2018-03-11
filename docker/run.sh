@@ -7,7 +7,7 @@ plot4=src/plot4.R
 plot8=src/plot8.R
 
 t1_1T=textblob-performance-analysis/inputs/t1/1
-t1_1T4=textblob-performance-analysis/inputs/t1/ddd
+t1_1T4=textblob-performance-analysis/inputs/t1/1T4
 t1_1T16=textblob-performance-analysis/inputs/t1/1T_16
 t1_1T64=textblob-performance-analysis/inputs/t1/1t64
 t1_1T256=textblob-performance-analysis/inputs/t1/1T256
