@@ -8,7 +8,8 @@ RUN apt-get -y update
 RUN apt-get install -qq -y curl
 RUN apt-get install -y git \
 	python \
-	python-pip
+	python-pip \
+	python3
 
 RUN pip install numpy \
 	--upgrade pip \
@@ -17,7 +18,7 @@ RUN pip install numpy \
 	--upgrade nltk
 RUN python -m textblob.download_corpora
 #change this date if you want ot clear cache
-ARG CACHE_DATE=2018-4-11
+ARG CACHE_DATE=2018-4-13
 RUN cd ~
 RUN git clone https://github.com/wchen38/textblob-performance-analysis.git
 RUN cd textblob-performance-analysis

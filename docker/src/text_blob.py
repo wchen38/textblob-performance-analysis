@@ -4,7 +4,7 @@ from textblob import TextBlob
 #import numpy as np
 #from threading import Thread
 
-print python hellow world
+print hipythonworld!
 print sys.argv[1]
 file1 = sys.argv[1]
 loop_count = sys.argv[2]
