@@ -5,6 +5,7 @@
 #thread=$1
 #num_loop=$2
 #t1_f1=../../inputs/t1/small1
+src=textblob-performance-analysis/docker/src/text_blob.py
 t1_f1=../../inputs/t1/small1
 t2_f1=./textblob-performance-analysis/inputs/t2/1
 t2_f2=./textblob-performance-analysis/inputs/t2/2
@@ -31,7 +32,7 @@ echo $thread
 if [[ $thread = "1" ]]
 then
      echo ------------------------using thread 1
-     python text_blob.py $t1_f1 8
+     python $src $t1_f1 8
      #interval-normalize.py $input_t1_csv > $output_t1_csv
      #Rscript plot.R
 fi
