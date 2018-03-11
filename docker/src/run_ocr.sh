@@ -4,7 +4,7 @@
 # number of cores over which the process will be parallelized
 #$num_thread=$1
 #num_loop=$2
-t1_f1=textblob-performance-analysis/inputs/t1/1T256
+t1_f1=../../inputs/t1/1T256
 t2_f1=./textblob-performance-analysis/inputs/t2/1
 t2_f2=./textblob-performance-analysis/inputs/t2/2
 
