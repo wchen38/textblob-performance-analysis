@@ -1,6 +1,7 @@
 var = 123
 # My first program in R Programming
 myString <- "Hello, World! This is my plot!"
+args <- commandArgs(trailingOnly = TRUE)
 filename <- args[1]
 print (filename)
 print ( myString)
