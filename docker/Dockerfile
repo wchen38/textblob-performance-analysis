@@ -23,4 +23,4 @@ RUN ls
 
 COPY helloworld.sh /helloworld.sh 
 #CMD ["bash","start_docker.sh"]
-CMD ["python","./textblob-performance-analysis/src/text_blob.py", "textblob-performance-analysis/inputs/t1/small1","2"]
+CMD ["bash","./textblob-performance-analysis/docker/src/run_ocr.sh"]
