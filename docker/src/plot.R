@@ -5,8 +5,8 @@ args <- commandArgs(trailingOnly = TRUE)
 filename <- args[1]
 print (filename)
 print ( myString)
-pdf(file="../data/graphs/t1/t1_test1T.pdf")
-#filename = sprintf("%s.csv",var)
+#pdf(file="../data/graphs/t1/t1_test1T.pdf")
+pdf(file=filename)
 #pdf( file=../data/graphs/t1/sprintf("%s.csv",var))
 #pdf(file="../../data/graphs/t1/t1_test1T.pdf")
 #read in csv file
