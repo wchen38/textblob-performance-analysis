@@ -1,4 +1,19 @@
 #! bin/bash
+
+#MORE info, please read README inside textblob-performance-analysis/README
+
+#run.sh ($bash run.sh [threadnumber]):
+#        threadnumber:
+#                0: give the latency plot
+#                1: running with 1 thread
+#                2: running with 2 thread
+#                4: running with 4 thread
+#                8: running with 8 thread
+
+#-allow user to select the number of threads to use, once the thread is chosen, then it will output
+#the plots for 1T, 1T/4, 1T/16, 1T/64, 1T/256 instructions. Next, it will run perf and output the measurements
+#into a csv file then normalize it so it could be plotted using R.
+
 thread=$1
 
 plot=src/plot.R

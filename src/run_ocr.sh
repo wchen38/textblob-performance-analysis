@@ -4,7 +4,7 @@
 # number of cores over which the process will be parallelized
 num_thread=$1
 num_loop=$2
-t1_f1=../inputs/t1/1T256
+t1_f1=../inputs/t1/small1
 t2_f1=../inputs/t2/1
 t2_f2=../inputs/t2/2
 
@@ -23,12 +23,12 @@ output_t8_csv=../data/csvs/t8/t8_new.csv
 # extra arguments to tesseract
 #parallel --bar -j $num_cores ./text_blob.py
      echo ------------------------using thread 1
-     perf stat -I 50 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, -o $input_t1_csv python text_blob.py $t1_f1 8
+     perf stat -I 50 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, -o $input_t1_csv python text_blob.py $t1_f1 $num_thread
      interval-normalize.py $input_t1_csv > $output_t1_csv
      Rscript plot.R
 
-#if [ 0 = 1 ]
-#then
+if [ 0 = 1 ]
+then
      echo -------------------------using thread 2
      perf stat -I 50 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, -o $input_t2_csv parallel ::: "python text_blob.py $t1_f1 4" "python text_blob.py $t1_f1 4"
      interval-normalize.py $input_t2_csv > $output_t2_csv
@@ -48,4 +48,4 @@ output_t8_csv=../data/csvs/t8/t8_new.csv
      interval-normalize.py $input_t8_csv > $output_t8_csv
      Rscript plot8.R
      echo not using any threads
-#fi
+fi
