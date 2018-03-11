@@ -128,6 +128,9 @@ then
         interval-normalize.py $input_t1_csv > $output_t1_csv
         Rscript $plot8 $plot_data_out/thread8_1T256.pdf
 
+elif [[ $thread = "0" ]]
+then 
+	eog laten.png
 else 
 	echo invalid thread number
 fi

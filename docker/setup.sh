@@ -3,4 +3,4 @@
 #cd textblob-performance-analysis/docker
 #sudo apt-get install R
 #sudo apt-get install r-base
-docker build --build-arg CACHE_DATE=$(2018-3-16) -t test1 .
+sudo docker build --build-arg CACHE_DATE=$(2018-3-16) -t test1 .

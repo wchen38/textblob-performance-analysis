@@ -1,5 +1,7 @@
 CMPE202 Project
 
+All the graphs will output to textblob-performance-analysis/dockerdata.
+
 setup.sh:
 -It will git clone my github repo that contain all the files that I need inroder to run run.sh.
 The reason I need to clone from my project repo is because I set up my input/output of my
@@ -8,7 +10,18 @@ csv and plots to save into a specific folder.
 -Builds the docker image file.
 
 run.sh ($bash run.sh [threadnumber]):
--allow me to select the number of threads to use, it will run perf and output the measurements 
+	threadnumber:
+		0: give the latency plot
+		1: running with 1 thread
+		2: running with 2 thread
+		4: running with 4 thread
+		8: running with 8 thread
+		
+-allow me to select the number of threads to use, once the thread is chosen, then it will output
+the plots for 1T, 1T/4, 1T/16, 1T/64, 1T/256 instructions. Next, it will run perf and output the measurements 
 into a csv file then normalize it so it could be plotted using R.
 
-I am able to plot all the throughput and latency graphs without docker
+Without docker, I am able to plot all the throughput and latency.
+With docker I couldn't get latency graph to work properly.
+
+
