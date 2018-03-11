@@ -2,6 +2,9 @@
 thread=$1
 
 plot=src/plot.R
+plot2=src/plot2.R
+plot4=src/plot4.R
+plot8=src/plot8.R
 
 t1_1T=textblob-performance-analysis/inputs/t1/small1
 t1_1T4=textblob-performance-analysis/inputs/t1/small1
@@ -41,6 +44,26 @@ then
 elif [[ $thread = "2" ]]
 then 
 	echo thread 2 in the run.sh file---------------------------------------------
+        perf stat -I 100 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
+        -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T" test1
+        interval-normalize.py $input_t1_csv > $output_t1_csv
+        Rscript $plot2
+
+        perf stat -I 1000 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
+        -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T4" test1
+        interval-normalize.py $input_t1_csv > $output_t1_csv
+        Rscript $plot2
+
+        perf stat -I 1000 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
+        -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T64" test1
+        interval-normalize.py $input_t1_csv > $output_t1_csv
+        Rscript $plot2
+
+        perf stat -I 1000 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
+        -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T256" test1
+        interval-normalize.py $input_t1_csv > $output_t1_csv
+        Rscript $plot2
+
 elif [[ $thread = "4" ]]
 then 
 	echo thread 4 in the run.sh file--------------------------------------------
