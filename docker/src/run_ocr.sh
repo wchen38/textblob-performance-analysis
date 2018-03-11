@@ -27,6 +27,7 @@ output_t8_csv=../../data/csvs/t8/t8_new.csv
 echo hello world!
 echo $t1_f1
 echo $thread
+ls ~/
 #pwd
 #ls textblob-performance-analysis/docker/src/$t1_f1
 if [[ $thread = "1" ]]
