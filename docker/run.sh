@@ -22,7 +22,7 @@ then
 	perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T" test1
 	interval-normalize.py $input_t1_csv > $output_t1_csv
-	Rscript $plot ../../data/graphs/t1/5.pdf
+	Rscript $plot ../data/graphs/t1/5.pdf
 	
 	perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T4" test1
