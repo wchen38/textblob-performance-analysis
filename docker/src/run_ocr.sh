@@ -2,7 +2,7 @@
 
 
 # number of cores over which the process will be parallelized
-thread=$1
+#thread=$1
 #num_loop=$2
 #t1_f1=../../inputs/t1/small1
 t1_f1=../../inputs/t1/small1
@@ -23,6 +23,7 @@ output_t8_csv=../../data/csvs/t8/t8_new.csv
 # runs OCR on the found TIFF files and converts them to text. Assumes English, but you can supply
 # extra arguments to tesseract
 #parallel --bar -j $num_cores ./text_blob.py
+echo hello world!
 echo $t1_f1
 echo $thread
 #pwd
