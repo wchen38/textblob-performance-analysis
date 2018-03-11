@@ -1,7 +1,7 @@
 #! bin/bash
 thread=$1
 
-plot=textblob-performance-analysis/docker/src/plot.R
+plot=src/plot.R
 
 t1_1T=textblob-performance-analysis/inputs/t1/small1
 t1_1T4=textblob-performance-analysis/inputs/t1/small1
