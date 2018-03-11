@@ -1,0 +1,5 @@
+Timestamp,L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses
+     1.000102515,501145,48441258,850395,179129,37674426,21021
+     2.000281380,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>,<not counted>
+     3.000513134,4328,70753,12107,1292,307705,638
+     3.027970261,75589,3379337,118443,10389,3631996,11542
