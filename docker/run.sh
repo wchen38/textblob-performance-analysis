@@ -22,26 +22,27 @@ then
 	perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T" test1
 	interval-normalize.py $input_t1_csv > $output_t1_csv
-	Rscript $plot ./dockerdata/graphs/t1/thread1_1T.pdf
+	Rscript $plot ./dockerdata/thread1_1T.pdf
 	
 	perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T4" test1
 	interval-normalize.py $input_t1_csv > $output_t1_csv
-	Rscript $plot ./dockerdata/graphs/t1/thread1_1T4.pdf
+	Rscript $plot ./dockerdata/thread1_1T4.pdf
 
 	perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T64" test1
 	interval-normalize.py $input_t1_csv > $output_t1_csv
-        Rscript $plot ./dockerdata/graphs/t1/thread1_1T16.pdf
+        Rscript $plot ./dockerdata/thread1_1T16.pdf
 	
 	perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T256" test1
         interval-normalize.py $input_t1_csv > $output_t1_csv
-        Rscript $plot ./dockerdata/graphs/t1/thread1_1T64.pdf 
+        Rscript $plot ./dockerdata/thread1_1T64.pdf 
+
         perf stat -I 1500 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, \
         -o $input_t1_csv docker run -e thread=1 -e file="$t1_1T256" test1
         interval-normalize.py $input_t1_csv > $output_t1_csv
-        Rscript $plot ./dockerdata/graphs/t1/thread1_1T256.pdf
+        Rscript $plot ./dockerdata/thread1_1T256.pdf
 
 elif [[ $thread = "2" ]]
 then 
