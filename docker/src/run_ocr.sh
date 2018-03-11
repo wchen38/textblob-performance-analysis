@@ -33,27 +33,21 @@ if [[ $thread = "1" ]]
 then
      echo ------------------------using thread 1
      python $src $file 8
-fi
-
-if [ 0 = 1 ]
+elif [[ "thread" = "2" ]]
 then
      echo -------------------------using thread 2
-     perf stat -I 50 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, -o $input_t2_csv parallel ::: "python text_blob.py $t1_f1 4" "python text_blob.py $t1_f1 4"
-     interval-normalize.py $input_t2_csv > $output_t2_csv
-     Rscript plot2.R    
-
+     parallel ::: "python $src $file 4" "src $file 4"
+elif [[ "thread" = "4" ]]
+then
      echo -------------------------using thread 4
-     perf stat -I 50 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, -o $input_t4_csv parallel ::: "python text_blob.py $t1_f1 2" \
-     "python text_blob.py $t1_f1 2" "python text_blob.py $t1_f1 2"  "python text_blob.py $t1_f1 2"
-     interval-normalize.py $input_t4_csv > $output_t4_csv
-     Rscript plot4.R
-    
-
+     parallel ::: "python $src $file 2" \
+     "python $src $file 2" "python $src $file 2"  "python $src $file 2"
+elif [[ "thread" = "8" ]]
+then    
      echo ------------------------ using thread 8
-     perf stat -I 50 -e L1-dcache-load-misses,instructions,l2_rqsts.miss,branch-misses,cycles,LLC-load-misses -x, -o $input_t8_csv parallel ::: "python text_blob.py $t1_f1 1" \
-     "python text_blob.py $t1_f1 1" "python text_blob.py $t1_f1 1"  "python text_blob.py $t1_f1 1" "python text_blob.py $t1_f1 1" \
-     "python text_blob.py $t1_f1 1" "python text_blob.py $t1_f1 1"  "python text_blob.py $t1_f1 1"
-     interval-normalize.py $input_t8_csv > $output_t8_csv
-     Rscript plot8.R
-     echo not using any threads
+     parallel ::: "python $src $file 1" \
+     "python $src $file 1" "python $src $file 1"  "python $src $file 1" "python $src $file 1" \
+     "python $src $file 1" "python $src $file 1"  "python $src $file 1"
+else 
+     echo thread is invalid
 fi

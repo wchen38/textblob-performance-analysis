@@ -9,7 +9,8 @@ RUN apt-get install -qq -y curl
 RUN apt-get install -y git \
 	python \
 	python-pip \
-	python3
+	python3 \
+	parallel
 
 RUN pip install numpy \
 	--upgrade pip \
