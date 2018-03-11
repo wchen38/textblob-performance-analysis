@@ -32,7 +32,7 @@ echo hello world!
 if [[ $thread = "1" ]]
 then
      echo ------------------------using thread 1
-     python $src $t1_1T 8
+     python $src $file 8
 fi
 
 if [ 0 = 1 ]
